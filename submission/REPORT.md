@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602704
 - **Lớp:** K4-L3A
 - **Repository URL:** https://github.com/datpq-alpha/K4-L3-Day13-PhamQuangDat-2A202602704-Monitoring-LLMOps
-- **Commit SHA cuối:**
+- **Commit SHA cuối:** `bcc950a0ebf38d4f56298d72fdcda35a3fb20bf1` (commit chứa đầy đủ source và evidence; commit sau chỉ hoàn thiện report)
 - **Challenge ID:** `day13-k4-l3a-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3a-2A202602704`
 
