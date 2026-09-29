@@ -1,6 +1,27 @@
 from app.pii import scrub_text
 
 
+def test_scrub_cccd() -> None:
+    cccd = "001203012345"
+    out = scrub_text(f"CCCD: {cccd}")
+
+    assert cccd not in out
+    assert "REDACTED_CCCD" in out
+
+
+def test_scrub_credit_card() -> None:
+    card_numbers = (
+        "4111111111111111",
+        "4111 1111 1111 1111",
+        "4111-1111-1111-1111",
+    )
+
+    for card_number in card_numbers:
+        out = scrub_text(f"Card: {card_number}")
+        assert card_number not in out
+        assert "REDACTED_CREDIT_CARD" in out
+
+
 def test_scrub_email() -> None:
     out = scrub_text("Email me at student@vinuni.edu.vn")
     assert "student@" not in out

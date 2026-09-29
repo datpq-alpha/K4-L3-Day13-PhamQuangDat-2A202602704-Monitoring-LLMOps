@@ -7,9 +7,14 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+  error_budget:
+    calculation: '(100 - 99.5) / 100 * total_requests'
+    allowed_bad_requests_per_1000: 5
+    allowed_bad_minutes_per_28d: 201.6
+  note: Ngưỡng 3000 ms cao hơn baseline ổn định và dành phần đệm cho prompt fetch/network; request lỗi hoặc chậm hơn ngưỡng đều tiêu thụ error budget.
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
+  daily_cost_window: 1d
   quality_score_avg_min: 0.75
   retrieval_success_rate_pct_min: 90
